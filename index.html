@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Style • @lsalemv</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0a;
+            color: #e8e8e8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle starfield background */
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #ffffff22, transparent),
+                radial-gradient(1.5px 1.5px at 40px 70px, #ffffff18, transparent),
+                radial-gradient(1px 1px at 90px 40px, #ffffff15, transparent),
+                radial-gradient(1.5px 1.5px at 130px 80px, #ffffff20, transparent),
+                radial-gradient(1px 1px at 160px 30px, #ffffff12, transparent);
+            background-size: 200px 100px;
+            animation: drift 60s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 480px;
+        }
+
+        .logo {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: #888;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .tg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: 1px solid #333;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .tg-btn:hover {
+            background: #222;
+            border-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+        }
+
+        .tg-btn:active {
+            transform: translateY(0);
+        }
+
+        .tg-icon {
+            width: 28px;
+            height: 28px;
+            fill: #2AABEE;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 28px;
+            font-size: 0.8rem;
+            color: #444;
+            z-index: 1;
+        }
+
+        .footer span {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Grok</div>
+        <p class="subtitle">Простой сайт в моём стиле</p>
+
+        <a href="https://t.me/lsalemv" class="tg-btn" target="_blank" rel="noopener">
+            <svg class="tg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.12.098.153.23.169.331.016.101.036.33.02.51z"/>
+            </svg>
+            Написать в Telegram
+        </a>
+    </div>
+
+    <div class="footer">
+        made with <span>Grok</span>
+    </div>
+</body>
+</html>
